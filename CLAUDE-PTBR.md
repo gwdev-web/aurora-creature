@@ -2,67 +2,44 @@
 
 [English](CLAUDE.md) | **Português**
 
-Guia para agentes (e pessoas) que trabalham neste repositório.
+**Aurora Creature**: jogo 2D de captura e batalha por turnos em TypeScript e Canvas 2D. Projeto de estudo, no ar em https://gwdev-web.github.io/aurora-creature/.
 
-## Projeto
+## Regras
 
-**Aurora Creature**: jogo 2D de exploração, captura e batalha por turnos, feito em TypeScript e Canvas 2D, para estudo e portfólio. Publicado em https://gwdev-web.github.io/aurora-creature/.
-
-- Todo o conteúdo é **original**: criaturas, golpes, tipos, personagens, cidades, arte (desenhada por código), sons e músicas (sintetizados por código).
-- Nunca adicione nomes, imagens, sons, dados ou personagens de jogos ou franquias existentes, nem integre APIs que sirvam esse tipo de conteúdo.
-- Sem anúncios, doações ou qualquer fim comercial.
+- Todo o conteúdo é original e feito por código. Nunca adicione nomes, assets ou dados de jogos ou franquias existentes.
+- Sem anúncios, doações ou fins comerciais.
+- Sem arquivo `LICENSE` ou menções a licença, a menos que o dono peça. Mantenha o crédito da fonte Press Start 2P nos READMEs e na página Sobre.
 
 ## Comandos
 
-Use **pnpm** (versão fixada em `packageManager`). Se o `pnpm` global não existir, use `corepack pnpm`.
+Use pnpm (`corepack pnpm` se não estiver instalado globalmente).
 
 ```bash
 pnpm install
-pnpm dev       # servidor local
-pnpm build     # tsc --noEmit + vite build (é o check "build" do CI)
-pnpm preview
-pnpm i18n:check  # confere as traduções do jogo
+pnpm dev
+pnpm build       # tsc --noEmit + vite build
+pnpm i18n:check  # todo texto do jogo precisa de tradução
 ```
 
-## Arquitetura
+## Código
 
-**Orientada a objetos de ponta a ponta**: cada responsabilidade numa classe; módulos exportam classes, tipos e tabelas de dados constantes. Não misture funções soltas com classes. Mapa das classes em [docs/ARCHITECTURE-PTBR.md](docs/ARCHITECTURE-PTBR.md).
+Orientado a objetos: uma responsabilidade por classe; módulos exportam classes, tipos e tabelas de dados constantes. As dependências vão de `scenes` → `world`/`engine` → `core` → `data`, e o `core` não acessa o DOM. Mapa das classes em [docs/ARCHITECTURE-PTBR.md](docs/ARCHITECTURE-PTBR.md).
 
-- `src/data`: tabelas + classes de consulta (`Bestiary`, `MoveBook`, `TypeChart`, `Regions`).
-- `src/core`: regras e estado, sem DOM (`Creature`, `BattleRules`, `EnemyAI`, `GameState`, `Bag`, `SaveManager`...).
-- `src/engine`: `Game`, `Scene` (abstrata), `Input`, `Painter`, `Dialog`, `Menu`, sprites e áudio.
-- `src/world`: mapa, personagens e pixel art do cenário.
-- `src/scenes`: telas (subclasses de `Scene`); fluxos com `async/await` e `game.push<T>()`.
-
-A fonte pixelada desenha maiúsculas acentuadas pequenas, então o `Painter` desenha a letra sem acento e pinta o acento (´ ` ^ ~ ¨ ¸) em pixels por cima dela.
-
-### Padrões de interface
-
-- Use `Painter.box` em todo painel, com 4 px de margem interna; texto nunca encosta na borda.
-- Menus usam `Menu` (seta + rótulo); preços e quantidades vão na coluna `values`, alinhada à direita, nunca com espaços de preenchimento.
-- Linha de ajuda no rodapé das telas cheias: `A: escolher   B: voltar`, tamanho 5, cor clara, em `H - 9`.
-- Em desenvolvimento (`pnpm dev`), o `LayoutCheck` avisa no console (e em `window.__layout`) quando um texto sai da caixa ou da tela; deixe-o sem avisos antes de abrir a PR.
-- Nomes de golpes precisam caber no menu de batalha: no máximo 11 caracteres nos dois idiomas.
+- Os textos do jogo são escritos em português no código, com a tradução em `src/i18n/en.ts`. Textos com valores usam `I18n.t('... {nome} ...', { nome })`.
+- Todo painel usa `Painter.box` com 4 px de margem interna.
+- Menus usam `Menu`; preços e quantidades vão na coluna `values`, nunca com espaços de preenchimento.
+- Linhas de ajuda em telas cheias: tamanho 5, cor clara, em `H - 9`.
+- Nomes de golpes: no máximo 11 caracteres nos dois idiomas.
+- No `pnpm dev`, o `LayoutCheck` avisa quando um texto sai da caixa ou da tela; deixe-o sem avisos.
 
 ## Idioma
 
-Mensagens de commit, títulos e corpos de PR, nomes de branch e comentários no código em **português**. A documentação é bilíngue: o arquivo principal em **inglês** (`README.md`, `CHANGELOG.md`, `CLAUDE.md`, `docs/ARCHITECTURE.md`, `docs/ROADMAP.md`) e a versão em português com o sufixo `-PTBR` (`README-PTBR.md` etc.); ao mudar um, mude o outro. O **jogo** é bilíngue (português e inglês): escreva os textos em português no código e adicione a tradução em `src/i18n/en.ts`; textos com valores usam `I18n.t('... {nome} ...', { nome })`. Rode `pnpm i18n:check` antes de abrir a PR (o CI também roda).
+Commits, PRs, nomes de branch e comentários no código em português, com Conventional Commits. A documentação é bilíngue (`*.md` em inglês, `*-PTBR.md` em português); altere as duas juntas.
 
-Commits seguem o Conventional Commits (`feat(escopo): ...`, `fix:`, `chore:`, `docs:`, `refactor:`, `ci:`).
+## Branches e releases
 
-## Git Flow
-
-- `main`: produção; só recebe PR de `release/x.y.z` ou `hotfix/x.y.z` (merge commit + tag `vX.Y.Z` + release no GitHub).
-- `develop`: branch padrão; recebe PRs de `feature/*`, `fix/*`, `chore/*`, `docs/*`, `refactor/*`, `ci/*` com **squash**.
-- Depois de cada release, abrir PR `main` → `develop` (merge commit).
-- Rulesets em `main` e `develop`: PR obrigatória, check **build** verde, sem force push. Nunca faça commit direto nelas.
-- Atualize os dois changelogs em cada PR: `CHANGELOG.md` (inglês, seção "Unreleased") e `CHANGELOG-PTBR.md` (seção "Não lançado").
-- Passo a passo completo em [docs/ROADMAP-PTBR.md](docs/ROADMAP-PTBR.md).
-
-## Deploy
-
-O GitHub Pages usa a origem **GitHub Actions**. O `deploy.yml` roda **somente** quando o `main` recebe um merge (sem gatilho manual). O `ci.yml` roda o build em toda PR para `develop` e `main`.
-
-## Uso
-
-Projeto de estudo sem arquivo de licença, de propósito (por padrão, todos os direitos reservados), e sem fins comerciais. Não adicione arquivo `LICENSE` nem menções a licença sem o dono pedir. Os créditos de terceiros (fonte Press Start 2P, SIL Open Font License) continuam no README e na página Sobre.
+- `develop`: base para novos trabalhos, com branches `feature/*`, `fix/*`, `chore/*`, `docs/*`, `refactor/*` e `ci/*`. Abra as PRs para ela, pois a `main` ainda é a branch padrão do repositório.
+- `main`: produção. Todo push publica no GitHub Pages pelo `deploy.yml`.
+- O `ci.yml` roda o build e a checagem de traduções nas PRs para `develop` e `main`.
+- Registre as mudanças em "Unreleased" / "Não lançado" nos dois changelogs.
+- Release: atualize o `package.json`, date os changelogs, faça o merge da `develop` na `main` e crie a tag `vX.Y.Z` e a release no GitHub.
