@@ -1,0 +1,3 @@
+# Dependências que podem rodar script de instalação (o esbuild baixa o binário da plataforma).
+allowBuilds:
+  esbuild: true

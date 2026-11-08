@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Sobre o Aurora Creature: projeto de estudo de TypeScript e Canvas, sem fins comerciais" />
+    <title>Sobre — Aurora Creature</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <style>
+      body { margin: 0; background: radial-gradient(circle at 50% 0%, #1f4a5c, #0b1620 70%) fixed; color: #e0f4ff; font: 16px/1.65 system-ui, sans-serif; }
+      main { max-width: 720px; margin: 0 auto; padding: 40px 20px 64px; }
+      h1 { color: #f8d870; font-size: 2rem; margin: 0 0 4px; }
+      h2 { color: #7ef0c8; font-size: 1.15rem; margin: 32px 0 8px; }
+      .sub { opacity: .75; margin: 0 0 24px; }
+      a { color: #7ef0c8; }
+      .card { background: rgba(255,255,255,.06); border: 1px solid rgba(126,240,200,.25); border-radius: 12px; padding: 16px 20px; }
+      ul { padding-left: 20px; }
+      .back { display: inline-block; margin-bottom: 24px; }
+      footer { margin-top: 40px; font-size: .85rem; opacity: .6; }
+      .lang { float: right; background: transparent; color: #7ef0c8; border: 1px solid rgba(126,240,200,.4); border-radius: 8px; padding: 4px 10px; cursor: pointer; font: inherit; font-size: .85rem; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <button id="lang" class="lang" type="button"></button>
+      <div data-lang="pt">
+      <a class="back" href="./">← Voltar ao jogo</a>
+      <h1>Sobre o projeto</h1>
+      <p class="sub">Aurora Creature · projeto de estudo</p>
+
+      <div class="card">
+        <p><strong>Este jogo foi feito exclusivamente para fins de estudo.</strong> É um projeto pessoal de portfólio para praticar TypeScript, Canvas 2D, Web Audio, arquitetura orientada a objetos, Git Flow e CI/CD. Não tem nenhum fim comercial: não há anúncios, doações, venda nem coleta de dados.</p>
+      </div>
+
+      <h2>Conteúdo original</h2>
+      <p>Todas as criaturas, golpes, tipos, personagens, cidades e rotas foram criados para este projeto. A arte é desenhada por código (as sprites das criaturas são geradas a partir de uma semente) e os efeitos sonoros e as músicas são sintetizados no navegador. O jogo não usa imagens, sons, nomes ou personagens de nenhuma franquia existente.</p>
+
+      <h2>O que foi estudado</h2>
+      <ul>
+        <li>TypeScript em modo strict e arquitetura orientada a objetos;</li>
+        <li>renderização em Canvas 2D com pixel art e geração procedural de sprites;</li>
+        <li>síntese de som e música com a Web Audio API;</li>
+        <li>fluxos de jogo com <code>async/await</code> e pilha de cenas;</li>
+        <li>persistência com <code>localStorage</code> em 3 slots de save;</li>
+        <li>internacionalização (português e inglês);</li>
+        <li>Git Flow com Pull Requests, Conventional Commits, CI no GitHub Actions e deploy no GitHub Pages.</li>
+      </ul>
+
+      <h2>Uso</h2>
+      <p>Projeto feito somente para fins de estudo e portfólio, sem fins comerciais. O código está público para consulta.</p>
+
+      <h2>Créditos</h2>
+      <ul>
+        <li>Desenvolvimento: <a href="https://github.com/gwdev-web">gwdev-web</a>.</li>
+        <li>Fonte <a href="https://fonts.google.com/specimen/Press+Start+2P">Press Start 2P</a>, de CodeMan38, sob a SIL Open Font License.</li>
+      </ul>
+
+      <h2>Contato</h2>
+      <p>Dúvidas, sugestões ou pedidos de remoção de qualquer conteúdo: abra uma <a href="https://github.com/gwdev-web/aurora-creature/issues">issue no GitHub</a>.</p>
+
+      <footer>Aurora Creature · projeto de estudo sem fins comerciais.</footer>
+      </div>
+      <div data-lang="en" hidden>
+      <a class="back" href="./">← Back to the game</a>
+      <h1>About the project</h1>
+      <p class="sub">Aurora Creature · study project</p>
+
+      <div class="card">
+        <p><strong>This game was made exclusively for study purposes.</strong> It is a personal portfolio project to practice TypeScript, Canvas 2D, Web Audio, object-oriented architecture, Git Flow and CI/CD. It has no commercial purpose: no ads, donations, sales or data collection.</p>
+      </div>
+
+      <h2>Original content</h2>
+      <p>All creatures, moves, types, characters, towns and routes were created for this project. The art is drawn by code (creature sprites are generated from a seed) and the sound effects and music are synthesized in the browser. The game does not use images, sounds, names or characters from any existing franchise.</p>
+
+      <h2>What was studied</h2>
+      <ul>
+        <li>TypeScript in strict mode and object-oriented architecture;</li>
+        <li>Canvas 2D rendering with pixel art and procedural sprite generation;</li>
+        <li>sound and music synthesis with the Web Audio API;</li>
+        <li>game flows with <code>async/await</code> and a scene stack;</li>
+        <li>persistence with <code>localStorage</code> in 3 save slots;</li>
+        <li>internationalization (Portuguese and English);</li>
+        <li>Git Flow with Pull Requests, Conventional Commits, CI on GitHub Actions and deploy to GitHub Pages.</li>
+      </ul>
+
+      <h2>Use</h2>
+      <p>This project was made only for study and portfolio purposes, with no commercial intent. The code is public for reference.</p>
+
+      <h2>Credits</h2>
+      <ul>
+        <li>Development: <a href="https://github.com/gwdev-web">gwdev-web</a>.</li>
+        <li><a href="https://fonts.google.com/specimen/Press+Start+2P">Press Start 2P</a> font by CodeMan38, under the SIL Open Font License.</li>
+      </ul>
+
+      <h2>Contact</h2>
+      <p>Questions, suggestions or requests to remove any content: open an <a href="https://github.com/gwdev-web/aurora-creature/issues">issue on GitHub</a>.</p>
+
+      <footer>Aurora Creature · study project with no commercial purpose.</footer>
+      </div>
+    </main>
+    <script>
+      // Mesmo idioma escolhido no jogo (salvo no localStorage); o botão alterna.
+      (function () {
+        var KEY = 'aurora-creature:idioma';
+        var saved = null;
+        try { saved = localStorage.getItem(KEY); } catch (e) {}
+        var lang = saved === 'pt' || saved === 'en' ? saved : (navigator.language || '').toLowerCase().indexOf('pt') === 0 ? 'pt' : 'en';
+        var btn = document.getElementById('lang');
+        function apply() {
+          document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+          document.querySelectorAll('[data-lang]').forEach(function (el) { el.hidden = el.getAttribute('data-lang') !== lang; });
+          btn.textContent = lang === 'pt' ? 'English' : 'Português';
+          document.title = lang === 'pt' ? 'Sobre — Aurora Creature' : 'About — Aurora Creature';
+        }
+        btn.addEventListener('click', function () {
+          lang = lang === 'pt' ? 'en' : 'pt';
+          try { localStorage.setItem(KEY, lang); } catch (e) {}
+          apply();
+        });
+        apply();
+      })();
+    </script>
+  </body>
+</html>

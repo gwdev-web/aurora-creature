@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#0b1620" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="description" content="Aurora Creature: jogo 2D de captura e batalha com criaturas originais, feito em TypeScript e Canvas" />
+    <title>Aurora Creature</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <main id="app">
+      <div class="console">
+        <div class="screen-wrap"><canvas id="screen" aria-label="Tela do jogo"></canvas></div>
+        <div class="touch" aria-hidden="true">
+          <div class="dpad">
+            <button data-btn="up" class="up" tabindex="-1">▲</button>
+            <button data-btn="left" class="left" tabindex="-1">◀</button>
+            <span class="hub"></span>
+            <button data-btn="right" class="right" tabindex="-1">▶</button>
+            <button data-btn="down" class="down" tabindex="-1">▼</button>
+          </div>
+          <div class="mid">
+            <button data-btn="start" class="start" tabindex="-1">START</button>
+            <button class="sound" data-mute tabindex="-1">SOM</button>
+          </div>
+          <div class="ab">
+            <button data-btn="b" class="b" tabindex="-1">B</button>
+            <button data-btn="a" class="a" tabindex="-1">A</button>
+          </div>
+        </div>
+      </div>
+      <p class="help" data-i18n>Setas/WASD: mover · Z/Espaço: A · X/Esc: B · Enter: menu · M: som</p>
+      <button id="mute" class="mute" type="button">SOM: LIGADO</button>
+      <footer class="legal">
+        <span data-i18n>Projeto feito para fins de estudo, sem fins comerciais. Criaturas, personagens, arte, sons e músicas são originais e criados por código.</span> ·
+        <a href="./sobre.html" data-i18n>sobre o projeto</a> ·
+        <a href="https://github.com/gwdev-web/aurora-creature" target="_blank" rel="noopener" data-i18n>código-fonte</a>
+      </footer>
+    </main>
+    <script type="module" src="./src/main.ts"></script>
+  </body>
+</html>
