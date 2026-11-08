@@ -6,6 +6,9 @@ Formato baseado em [Keep a Changelog](https://keepachangelog.com/pt-BR/1.1.0/) e
 
 ## [Não lançado]
 
+### Adicionado
+- Licença PolyForm Noncommercial 1.0.0 e aviso de não afiliação.
+
 ## [1.0.0] - 2026-11-08
 
 ### Adicionado

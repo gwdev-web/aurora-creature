@@ -8,7 +8,7 @@
 
 - Todo o conteúdo é original e feito por código. Nunca adicione nomes, assets ou dados de jogos ou franquias existentes.
 - Sem anúncios, doações ou fins comerciais.
-- Sem arquivo `LICENSE` ou menções a licença, a menos que o dono peça. Mantenha o crédito da fonte Press Start 2P nos READMEs e na página Sobre.
+- O projeto está sob a PolyForm Noncommercial 1.0.0 (`LICENSE`); mantenha o aviso de não afiliação nos READMEs e na página Sobre, e não descreva o jogo como baseado em nenhuma franquia. Mantenha o crédito da fonte Press Start 2P nos READMEs e na página Sobre.
 
 ## Comandos
 

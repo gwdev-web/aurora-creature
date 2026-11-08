@@ -49,3 +49,9 @@ pnpm i18n:check  # confere se todo texto do jogo tem tradução em inglês
 ## Créditos
 
 Fonte [Press Start 2P](https://fonts.google.com/specimen/Press+Start+2P), de CodeMan38, sob a SIL Open Font License, via `@fontsource`.
+
+## Licença e aviso legal
+
+Licenciado sob a [PolyForm Noncommercial License 1.0.0](LICENSE): livre para estudo e qualquer outro uso não comercial. Componentes de terceiros, como a fonte acima, mantêm as próprias licenças.
+
+O Aurora Creature é um projeto de estudo independente. Não tem afiliação, endosso ou patrocínio de nenhuma empresa, editora ou franquia de jogos. Todas as marcas pertencem aos respectivos donos. Para pedir a remoção de qualquer conteúdo, [abra uma issue](https://github.com/gwdev-web/aurora-creature/issues).

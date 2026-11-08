@@ -19,7 +19,7 @@
     "portfolio"
   ],
   "author": "gwdev-web",
-  "license": "UNLICENSED",
+  "license": "PolyForm-Noncommercial-1.0.0",
   "private": true,
   "devDependencies": {
     "tsx": "^4.23.15",

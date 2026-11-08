@@ -8,7 +8,7 @@
 
 - All content is original and made by code. Never add names, assets or data from existing games or franchises.
 - No ads, donations or commercial purpose.
-- No `LICENSE` file or license mentions unless the owner asks. Keep the Press Start 2P credit in the READMEs and on the About page.
+- The project is under PolyForm Noncommercial 1.0.0 (`LICENSE`); keep the no-affiliation notice in the READMEs and on the About page, and do not describe the game as based on any franchise. Keep the Press Start 2P credit in the READMEs and on the About page.
 
 ## Commands
 

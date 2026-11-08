@@ -49,3 +49,9 @@ pnpm i18n:check  # checks that every in-game text has an English translation
 ## Credits
 
 [Press Start 2P](https://fonts.google.com/specimen/Press+Start+2P) font by CodeMan38, under the SIL Open Font License, via `@fontsource`.
+
+## License and disclaimer
+
+Licensed under the [PolyForm Noncommercial License 1.0.0](LICENSE): free for study and any other noncommercial use. Third-party components, such as the font above, keep their own licenses.
+
+Aurora Creature is an independent study project. It is not affiliated with, endorsed by or sponsored by any game company, publisher or franchise. All trademarks belong to their respective owners. To request the removal of any content, [open an issue](https://github.com/gwdev-web/aurora-creature/issues).
